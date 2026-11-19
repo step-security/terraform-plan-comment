@@ -25,3 +25,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@bbc44d14a204704ccc493733616cd1e93a0321ec # v5.0.1
+        with:
+          # glob/minimatch/yaml (via jest, typescript-eslint, tsup) are dev-only, not shipped in dist/,
+          # and have no fix without an upstream release. Keep in sync with osv-scanner.toml.
+          allow-ghsas: GHSA-3g3m-2fjr-6pw4, GHSA-g3hv-75wg-m249, GHSA-48c2-rrv3-qjmp

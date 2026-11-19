@@ -1,0 +1,15 @@
+# Dev-only transitive dependencies (jest, typescript-eslint, tsup). They are not
+# bundled into dist/ and don't run in the action. No fix is available without an
+# upstream release of the parent package.
+
+[[IgnoredVulns]]
+id = "GHSA-3g3m-2fjr-6pw4"
+reason = "glob: dev-only (jest); not shipped in dist"
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+reason = "minimatch: dev-only (jest, typescript-eslint); not shipped in dist"
+
+[[IgnoredVulns]]
+id = "GHSA-48c2-rrv3-qjmp"
+reason = "yaml: dev-only (tsup); not shipped in dist"
